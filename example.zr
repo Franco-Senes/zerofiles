@@ -1,0 +1,22 @@
+# @title: ZeroFiles Example Configuration
+# @version: 1.2
+# @author: Franc
+
+// This is a single-line comment
+{
+    /* This is a multi-line comment
+       explaining the structure */
+    name: "ZeroFiles Project",
+    version: 1.0,
+    features: [
+        "No json import",
+        "Comments support",
+        "Relaxed syntax", // trailing comma in array
+    ],
+    settings: {
+        strict-mode: false, // single quotes key
+        timeout: 30.5, // floats
+        default_val: null, // null value
+        is_active: true, // case-insensitive booleans
+    }, // trailing comma in object
+}
