@@ -1,26 +1,21 @@
-# ZeroFiles (`.zr`) - Python Parser & Formatter
+ZeroFiles (.zr) - a way better version of JSON
+So basically, I got tired of how annoying JSON is (why can't we just use comments??), so I made my own file format called ZeroFiles (.zr). It's super lightweight and way easier to read. It basically takes the easy stuff from JS objects and YAML, but adds cool stuff like header metadata and comments that actually stay there when you format it.
 
-**ZeroFiles (`.zr`)** is a lightweight, developer-friendly data serialization format designed as a flexible alternative to JSON. It combines the simplicity of object and array structures with features like header metadata, multiple comment styles that are preserved during formatting, and unquoted object keys.
+I coded the whole thing from scratch in Python—like the lexer, parser, AST generator, formatter, and even a linter. No external libraries or anything, just pure code.
 
-This repository contains the reference Python implementation for the lexer (tokenizer), parser, AST (Abstract Syntax Tree) generator, formatter, and a static linter.
+Cool Features
+Actual Comments: You can use #, //, or even /* block comments */. Finally.
 
----
+Comments Don't Disappear: My formatter uses a custom AST, so when it cleans up your code, it doesn't just delete your comments like other annoying parsers do.
 
-## Core Features
+Headers: You can put special tags at the very top of the file using # @key: value.
 
-* **Native Comments:** Supports single-line comments (`#` and `//`) as well as block comments (`/* ... */`).
-* **Comment Preservation:** The AST-based formatter organizes code structure without stripping away or destroying explanatory comments.
-* **Header Metadata:** Allows you to define special directives at the top of the file using the `# @key: value` syntax.
-* **Clean Syntax:** Object keys can be valid identifiers without requiring quotes, similar to JavaScript or YAML.
-* **Built-in Linter:** Automatically detects style warnings—such as single-quote usage or unnecessary quotes on keys—and reports syntax errors with precise line and column numbers.
+No Annoying Quotes: You don't have to put quotes around object keys anymore if they're just normal names. It looks super clean, kinda like JavaScript.
 
----
+Built-in Linter: It catches stuff like using single quotes when you shouldn't, and if you mess up the syntax, it tells you the exact line and column number so you can fix it fast.
 
-## File Format Example
-
-Here is a standard `.zr` file:
-
-```json
+What a .zr file looks like:
+Python
 # @version: 1.0
 # @author: Dev
 # @project: Global Configuration
@@ -40,4 +35,4 @@ Here is a standard `.zr` file:
     ]
 }
 
-```
+Made for HackClub / Stardance
