@@ -1,4 +1,5 @@
-ZeroFiles (.zr) - a way better version of JSON
+# ZeroFiles (.zr) - a way better version of JSON
+# Context
 So basically, I got tired of how annoying JSON is (why can't we just use comments??), so I made my own file format called ZeroFiles (.zr). It's super lightweight and way easier to read. It basically takes the easy stuff from JS objects and YAML, but adds cool stuff like header metadata and comments that actually stay there when you format it.
 
 I coded the whole thing from scratch in Python—like the lexer, parser, AST generator, formatter, and even a linter. No external libraries or anything, just pure code.
